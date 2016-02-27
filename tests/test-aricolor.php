@@ -152,6 +152,27 @@ class Test_ariColor extends WP_UnitTestCase {
 					'luminance'  => 44,
 				),
 			),
+			'011B1E' => array(
+				'input' => array(
+					'hex'  => '#011B1E',
+					'rgb'  => 'rgb(1, 27, 30)',
+					'rgba' => 'rgba(1, 27, 30, 1)',
+					'hsl'  => 'hsl(186, 94%, 6%)',
+					'hsla' => 'hsla(186, 94%, 6%, 1)',
+				),
+				'output' => array(
+					'hex'        => '#011B1E',
+					'rgb'        => 'rgb(1,27,30)',
+					'rgba'       => 'rgba(1,27,30,1)',
+					'hsl'        => 'hsl(186,94%,6%)',
+					'hsla'       => 'hsla(186,94%,6%,1)',
+					'hue'        => 186,
+					'saturation' => 94,
+					'lightness'  => 6,
+					'alpha'      => 1,
+					'luminance'  => 22,
+				),
+			),
 		);
 
 		foreach ( $colors as $color ) {
