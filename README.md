@@ -1,6 +1,8 @@
 # ariColor
 A PHP library for color manipulation in themes and plugins
 
+[![Build Status](https://travis-ci.org/aristath/ariColor.svg?branch=master)](https://travis-ci.org/aristath/ariColor) [![codecov.io](https://codecov.io/github/aristath/ariColor/coverage.svg?branch=master)](https://codecov.io/github/aristath/ariColor?branch=master) [![License](https://img.shields.io/badge/license-GPL--2.0%2B-red.svg)](https://raw.githubusercontent.com/aristath/ariColor/master/LICENSE) 
+
 `ariColor` is a PHP library that will hopefully help WordPress theme developers do their job easier and more effectively.
 
 It does not provide you with methods like `lighten()`, `darken()` etc. Instead, what it does is give you the ability to create these yourself with extreme ease by giving you all the properties of a color at hand, and allowing you to manipulate them however you see fit.
