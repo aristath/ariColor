@@ -19,7 +19,14 @@
     </section>
 
     <section class="main-content">
-      <p><code>ariColor</code> is a PHP library that will hopefully help WordPress theme developers do their job easier and more effectively.</p>
+      <h1>
+<a id="aricolor" class="anchor" href="#aricolor" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ariColor</h1>
+
+<p>A PHP library for color manipulation in themes and plugins</p>
+
+<p><a href="https://travis-ci.org/aristath/ariColor"><img src="https://travis-ci.org/aristath/ariColor.svg?branch=master" alt="Build Status"></a> <a href="https://codecov.io/github/aristath/ariColor?branch=master"><img src="https://codecov.io/github/aristath/ariColor/coverage.svg?branch=master" alt="codecov.io"></a> <a href="https://raw.githubusercontent.com/aristath/ariColor/master/LICENSE"><img src="https://img.shields.io/badge/license-GPL--2.0%2B-red.svg" alt="License"></a> </p>
+
+<p><code>ariColor</code> is a PHP library that will hopefully help WordPress theme developers do their job easier and more effectively.</p>
 
 <p>It does not provide you with methods like <code>lighten()</code>, <code>darken()</code> etc. Instead, what it does is give you the ability to create these yourself with extreme ease by giving you all the properties of a color at hand, and allowing you to manipulate them however you see fit.</p>
 
@@ -70,7 +77,7 @@
 
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c">/**</span></span>
 <span class="pl-s1"><span class="pl-c"> * determine the luminance of the given color</span></span>
-<span class="pl-s1"><span class="pl-c"> * and then return #FFFFFF or #000000 so that our text is always readable</span></span>
+<span class="pl-s1"><span class="pl-c"> * and then return #FFFFFF or #222222 so that our text is always readable</span></span>
 <span class="pl-s1"><span class="pl-c"> * </span></span>
 <span class="pl-s1"><span class="pl-c"> * <span class="pl-k">@param</span> $background color string|array</span></span>
 <span class="pl-s1"><span class="pl-c"> *</span></span>
@@ -78,7 +85,7 @@
 <span class="pl-s1"><span class="pl-c"> */</span></span>
 <span class="pl-s1"><span class="pl-k">function</span> <span class="pl-en">custom_get_readable_color</span>( <span class="pl-smi">$background_color</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>#FFFFFF<span class="pl-pds">'</span></span> ) {</span>
 <span class="pl-s1">    <span class="pl-smi">$color</span> <span class="pl-k">=</span> <span class="pl-c1">ariColor</span><span class="pl-k">::</span>newColor( <span class="pl-smi">$background_color</span> );</span>
-<span class="pl-s1">    <span class="pl-k">return</span> ( <span class="pl-c1">127</span> <span class="pl-k">&gt;</span> <span class="pl-smi">$color</span><span class="pl-k">-&gt;</span><span class="pl-smi">luminance</span> ) ? <span class="pl-s"><span class="pl-pds">'</span>#000000<span class="pl-pds">'</span></span> : <span class="pl-s"><span class="pl-pds">'</span>#FFFFFF<span class="pl-pds">'</span></span>;</span>
+<span class="pl-s1">    <span class="pl-k">return</span> ( <span class="pl-c1">127</span> <span class="pl-k">&lt;</span> <span class="pl-smi">$color</span><span class="pl-k">-&gt;</span><span class="pl-smi">luminance</span> ) ? <span class="pl-s"><span class="pl-pds">'</span>#222222<span class="pl-pds">'</span></span> : <span class="pl-s"><span class="pl-pds">'</span>#FFFFFF<span class="pl-pds">'</span></span>;</span>
 <span class="pl-s1">}</span></pre></div>
 
 <p>Usage: </p>
