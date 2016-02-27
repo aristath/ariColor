@@ -64,7 +64,7 @@ Example function that given a background color decides if we're going to use whi
 ```php
 /**
  * determine the luminance of the given color
- * and then return #FFFFFF or #000000 so that our text is always readable
+ * and then return #FFFFFF or #222222 so that our text is always readable
  * 
  * @param $background color string|array
  *
@@ -72,7 +72,7 @@ Example function that given a background color decides if we're going to use whi
  */
 function custom_get_readable_color( $background_color = '#FFFFFF' ) {
 	$color = ariColor::newColor( $background_color );
-	return ( 127 > $color->luminance ) ? '#000000' : '#FFFFFF';
+	return ( 127 < $color->luminance ) ? '#222222' : '#FFFFFF';
 }
 ```
 
