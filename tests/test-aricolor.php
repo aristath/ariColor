@@ -226,6 +226,9 @@ class Test_ariColor extends WP_UnitTestCase {
 				$this->assertEquals( $number, $color_obj->getNew( 'red', $number )->red );
 				$this->assertEquals( $color_obj->green, $color_obj->getNew( 'red', $number )->green );
 				$this->assertEquals( $color_obj->blue, $color_obj->getNew( 'red', $number )->blue );
+				if ( $color_obj->red != $number ) {
+					$this->assertTrue( $color_obj->toCSS( 'hex' ) !== $color_obj->getNew( 'red', $number )->toCSS( 'hex' ) );
+				}
 			}
 		}
 
@@ -241,6 +244,9 @@ class Test_ariColor extends WP_UnitTestCase {
 				$this->assertEquals( $color_obj->red, $color_obj->getNew( 'green', $number )->red );
 				$this->assertEquals( $number, $color_obj->getNew( 'green', $number )->green );
 				$this->assertEquals( $color_obj->blue, $color_obj->getNew( 'green', $number )->blue );
+				if ( $color_obj->green != $number ) {
+					$this->assertTrue( $color_obj->toCSS( 'hex' ) !== $color_obj->getNew( 'green', $number )->toCSS( 'hex' ) );
+				}
 			}
 		}
 
@@ -256,6 +262,63 @@ class Test_ariColor extends WP_UnitTestCase {
 				$this->assertEquals( $color_obj->red, $color_obj->getNew( 'blue', $number )->red );
 				$this->assertEquals( $color_obj->green, $color_obj->getNew( 'blue', $number )->green );
 				$this->assertEquals( $number, $color_obj->getNew( 'blue', $number )->blue );
+				if ( $color_obj->blue != $number ) {
+					$this->assertTrue( $color_obj->toCSS( 'hex' ) !== $color_obj->getNew( 'blue', $number )->toCSS( 'hex' ) );
+				}
+			}
+		}
+
+	}
+
+	public function test_getNew_alpha() {
+		$color = ariColor::newColor( 'rgba(0,0,0,1)' );
+		$this->assertEquals( .5, $color->getNew( 'alpha', $color->alpha / 2 )->alpha );
+		$this->assertEquals( 'rgba(0,0,0,0.3)', $color->getNew( 'alpha', .3 )->toCSS( 'rgba' ) );
+	}
+
+	public function test_getNew_hue() {
+
+		$colors = $this->get_material_design_main_colors();
+
+		foreach ( $colors as $color ) {
+			$c = ariColor::newColor( $color );
+			$this->assertEquals( $c->hue - 5, $c->getNew( 'hue', $c->hue - 5 )->hue );
+			$this->assertEquals( $c->saturation, $c->getNew( 'hue', $c->hue - 5 )->saturation );
+			$this->assertEquals( $c->lightness, $c->getNew( 'hue', $c->hue - 5 )->lightness );
+			if ( 5 < $c->hue ) {
+				$this->assertTrue( $c->toCSS( 'hex' ) !== $c->getNew( 'hue', $c->hue - 5 )->toCSS( 'hex' ) );
+			}
+		}
+
+	}
+
+	public function test_getNew_saturation() {
+
+		$colors = $this->get_material_design_main_colors();
+
+		foreach ( $colors as $color ) {
+			$c = ariColor::newColor( $color );
+			$this->assertEquals( $c->hue, $c->getNew( 'saturation', $c->saturation - 5 )->hue );
+			$this->assertEquals( $c->saturation - 5, $c->getNew( 'saturation', $c->saturation - 5 )->saturation );
+			$this->assertEquals( $c->lightness, $c->getNew( 'saturation', $c->saturation - 5 )->lightness );
+			if ( 5 < $c->saturation ) {
+				$this->assertTrue( $c->toCSS( 'hex' ) !== $c->getNew( 'saturation', $c->hue - 5 )->toCSS( 'hex' ) );
+			}
+		}
+
+	}
+
+	public function test_getNew_lightness() {
+
+		$colors = $this->get_material_design_main_colors();
+
+		foreach ( $colors as $color ) {
+			$c = ariColor::newColor( $color );
+			$this->assertEquals( $c->hue, $c->getNew( 'lightness', $c->lightness - 5 )->hue );
+			$this->assertEquals( $c->saturation, $c->getNew( 'lightness', $c->lightness - 5 )->saturation );
+			$this->assertEquals( $c->lightness - 5, $c->getNew( 'lightness', $c->lightness - 5 )->lightness );
+			if ( 5 < $c->lightness ) {
+				$this->assertTrue( $c->toCSS( 'hex' ) !== $c->getNew( 'lightness', $c->hue - 5 )->toCSS( 'hex' ) );
 			}
 		}
 
