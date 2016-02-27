@@ -1,19 +1,14 @@
 {
-  "name": "aristath/kirki",
+  "name": "aristath/ariColor",
   "type": "wordpress-plugin",
-  "description": "Extending the WordPress customizer",
-  "homepage": "http://kirki.org",
+  "description": "A PHP library for color manipulation in themes and plugins",
+  "homepage": "http://aristath.github.io/ariColor",
   "license": "GPLv2 or later",
   "authors": [
     {
       "name" : "aristath",
       "email" : "aristath@gmail.com",
       "homepage" : "http://aristeides.com"
-    },
-    {
-      "name" : "fovoc",
-      "email" : "kalliris.d@gmail.com",
-      "homepage" : "https://github.com/fovoc"
     }
   ],
   "require": {
