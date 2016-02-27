@@ -215,4 +215,61 @@ class Test_ariColor extends WP_UnitTestCase {
 			}
 		}
 	}
+
+	public function test_getNew_red() {
+
+		$colors = $this->get_material_design_main_colors();
+
+		foreach ( $colors as $color ) {
+			$color_obj = ariColor::newColor( $color );
+			foreach ( range( 0, 255 ) as $number ) {
+				$this->assertEquals( $number, $color_obj->getNew( 'red', $number )->red );
+				$this->assertEquals( $color_obj->green, $color_obj->getNew( 'red', $number )->green );
+				$this->assertEquals( $color_obj->blue, $color_obj->getNew( 'red', $number )->blue );
+			}
+		}
+
+	}
+
+	public function test_getNew_green() {
+
+		$colors = $this->get_material_design_main_colors();
+
+		foreach ( $colors as $color ) {
+			$color_obj = ariColor::newColor( $color );
+			foreach ( range( 0, 255 ) as $number ) {
+				$this->assertEquals( $color_obj->red, $color_obj->getNew( 'green', $number )->red );
+				$this->assertEquals( $number, $color_obj->getNew( 'green', $number )->green );
+				$this->assertEquals( $color_obj->blue, $color_obj->getNew( 'green', $number )->blue );
+			}
+		}
+
+	}
+
+	public function test_getNew_blue() {
+
+		$colors = $this->get_material_design_main_colors();
+
+		foreach ( $colors as $color ) {
+			$color_obj = ariColor::newColor( $color );
+			foreach ( range( 0, 255 ) as $number ) {
+				$this->assertEquals( $color_obj->red, $color_obj->getNew( 'blue', $number )->red );
+				$this->assertEquals( $color_obj->green, $color_obj->getNew( 'blue', $number )->green );
+				$this->assertEquals( $number, $color_obj->getNew( 'blue', $number )->blue );
+			}
+		}
+
+	}
+
+	public function get_material_design_main_colors() {
+
+		$mdc = array();
+		$colors = array( 'F44336', 'E91E63', '9C27B0', '673AB7', '3F51B5', '2196F3', '03A9F4', '00BCD4', '009688', '4CAF50', '8BC34A', 'CDDC39', 'FFEB3B', 'FFC107', 'FF9800', 'FF5722', '795548', '9E9E9E', '607D8B' );
+		foreach ( $colors as $color ) {
+			$mdc[] = '#' . $color;
+		}
+		return $mdc;
+
+	}
+
 }
