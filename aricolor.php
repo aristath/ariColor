@@ -58,7 +58,7 @@ if ( ! class_exists( 'ariColor' ) ) {
 			if ( ! method_exists( $this, 'from_' . $mode ) ) {
 				$mode = $this->get_mode( $color );
 			}
-			if ( null == $mode ) {
+			if ( null === $mode ) {
 				return;
 			}
 			$this->mode = $mode;
@@ -102,17 +102,24 @@ if ( ! class_exists( 'ariColor' ) ) {
 		 *                          brightness
 		 * @param $value int|float|string the new value
 		 *
-		 * @return object|null
+		 * @return ariColor|null
 		 */
 		public function getNew( $property = '', $value = '' ) {
 			// Check if we're changing any of the rgba values
 			if ( in_array( $property, array( 'red', 'green', 'blue', 'alpha' ) ) ) {
 				$this->$property = $value;
+				$this->red   = max( 0, min( 255, $this->red ) );
+				$this->green = max( 0, min( 255, $this->green ) );
+				$this->blue  = max( 0, min( 255, $this->blue ) );
+				$this->alpha = max( 0, min( 255, $this->alpha ) );
 				return self::newColor( 'rgba(' . $this->red . ',' . $this->green . ',' . $this->blue . ',' . $this->alpha . ')', 'rgba' );
 			}
 			// Check if we're changing any of the hsl values
 			elseif ( in_array( $property, array( 'hue', 'saturation', 'lightness' ) ) ) {
-				$this->$property = $value;
+				$this->$property  = $value;
+				$this->hue        = max( 0, min( 360, $this->hue ) );
+				$this->saturation = max( 0, min( 100, $this->saturation ) );
+				$this->lightness  = max( 0, min( 100, $this->lightness ) );
 				return self::newColor( 'hsla(' . $this->hue . ',' . $this->saturation . '%,' . $this->lightness . '%,' . $this->alpha . ')', 'hsla' );
 			}
 			// Check if we're changing the brightness
@@ -138,6 +145,7 @@ if ( ! class_exists( 'ariColor' ) ) {
 		 * Figure out what mode we're using.
 		 *
 		 * @param string|array
+		 * @param string $color
 		 *
 		 * @return string
 		 */
