@@ -357,9 +357,9 @@ if ( ! class_exists( 'ariColor' ) ) {
 		 * @return string
 		 */
 		private function dexhex_double_digit( $value ) {
-			$value = ( 9 >= $value ) ? '0' . $value : dechex( $value );
+			$value = dechex( $value );
 			if ( 1 == strlen( $value ) ) {
-				$value .= $value;
+				$value = '0' . $value;
 			}
 			return $value;
 		}

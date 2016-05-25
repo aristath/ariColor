@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Dashboard for /srv/www/wordpress-develop/src/wp-admin</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../../../../../css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../../../../css/nv.d3.min.css" rel="stylesheet">
+  <link href="../../../../../css/style.css" rel="stylesheet">
+  <!--[if lt IE 9]>
+  <script src="../../../../../js/html5shiv.min.js"></script>
+  <script src="../../../../../js/respond.min.js"></script>
+  <![endif]-->
+ </head>
+ <body>
+  <header>
+   <div class="container">
+    <div class="row">
+     <div class="col-md-12">
+      <ol class="breadcrumb">
+        <li><a href="../../../../../index.html"></a></li>
+        <li><a href="../../../../index.html">srv</a></li>
+        <li><a href="../../../index.html">www</a></li>
+        <li><a href="../../index.html">wordpress-develop</a></li>
+        <li><a href="../index.html">src</a></li>
+        <li><a href="index.html">wp-admin</a></li>
+        <li class="active">(Dashboard)</li>
+
+      </ol>
+     </div>
+    </div>
+   </div>
+  </header>
+  <div class="container">
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Classes</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="classCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="classComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="includes/class-walker-category-checklist.php.html#19">Walker_Category_Checklist</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="includes/class-wp-internal-pointers.php.html#15">WP_Internal_Pointers</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="includes/class-wp-screen.php.html#15">WP_Screen</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="includes/class-wp-site-icon.php.html#15">WP_Site_Icon</a></td><td class="text-right">0%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="includes/class-wp-screen.php.html#15">WP_Screen</a></td><td class="text-right">25122</td></tr>
+       <tr><td><a href="includes/class-wp-internal-pointers.php.html#15">WP_Internal_Pointers</a></td><td class="text-right">552</td></tr>
+       <tr><td><a href="includes/class-wp-site-icon.php.html#15">WP_Site_Icon</a></td><td class="text-right">342</td></tr>
+       <tr><td><a href="includes/class-walker-category-checklist.php.html#19">Walker_Category_Checklist</a></td><td class="text-right">132</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Methods</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="methodCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="methodComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="includes/class-walker-category-checklist.php.html#34"><abbr title="Walker_Category_Checklist::start_lvl">start_lvl</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="includes/class-wp-screen.php.html#1058"><abbr title="WP_Screen::render_list_table_columns_preferences">render_list_table_columns_preferences</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="includes/class-wp-screen.php.html#665"><abbr title="WP_Screen::get_screen_reader_content">get_screen_reader_content</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="includes/class-wp-screen.php.html#677"><abbr title="WP_Screen::get_screen_reader_text">get_screen_reader_text</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="includes/class-wp-screen.php.html#700"><abbr title="WP_Screen::set_screen_reader_content">set_screen_reader_content</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="includes/class-wp-screen.php.html#716"><abbr title="WP_Screen::remove_screen_reader_content">remove_screen_reader_content</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="includes/class-wp-screen.php.html#729"><abbr title="WP_Screen::render_screen_meta">render_screen_meta</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="includes/class-wp-screen.php.html#906"><abbr title="WP_Screen::show_screen_options">show_screen_options</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="includes/class-wp-screen.php.html#969"><abbr title="WP_Screen::render_screen_options">render_screen_options</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="includes/class-wp-screen.php.html#1022"><abbr title="WP_Screen::render_meta_boxes_preferences">render_meta_boxes_preferences</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="includes/class-wp-screen.php.html#1103"><abbr title="WP_Screen::render_screen_layout">render_screen_layout</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="includes/class-wp-screen.php.html#635"><abbr title="WP_Screen::set_help_sidebar">set_help_sidebar</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="includes/class-wp-screen.php.html#1132"><abbr title="WP_Screen::render_per_page_options">render_per_page_options</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="includes/class-wp-screen.php.html#1196"><abbr title="WP_Screen::render_view_mode">render_view_mode</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="includes/class-wp-screen.php.html#1247"><abbr title="WP_Screen::render_screen_reader_content">render_screen_reader_content</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="includes/class-wp-site-icon.php.html#75"><abbr title="WP_Site_Icon::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="includes/class-wp-site-icon.php.html#89"><abbr title="WP_Site_Icon::create_attachment_object">create_attachment_object</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="includes/class-wp-site-icon.php.html#119"><abbr title="WP_Site_Icon::insert_attachment">insert_attachment</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="includes/class-wp-site-icon.php.html#147"><abbr title="WP_Site_Icon::additional_sizes">additional_sizes</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="includes/class-wp-site-icon.php.html#192"><abbr title="WP_Site_Icon::intermediate_image_sizes">intermediate_image_sizes</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="includes/class-wp-site-icon.php.html#210"><abbr title="WP_Site_Icon::delete_attachment_data">delete_attachment_data</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="includes/class-wp-screen.php.html#652"><abbr title="WP_Screen::get_columns">get_columns</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="includes/class-wp-screen.php.html#623"><abbr title="WP_Screen::get_help_sidebar">get_help_sidebar</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="includes/class-walker-category-checklist.php.html#50"><abbr title="Walker_Category_Checklist::end_lvl">end_lvl</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="includes/class-wp-screen.php.html#430"><abbr title="WP_Screen::add_old_compat_help">add_old_compat_help</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="includes/class-walker-category-checklist.php.html#68"><abbr title="Walker_Category_Checklist::start_el">start_el</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="includes/class-walker-category-checklist.php.html#122"><abbr title="Walker_Category_Checklist::end_el">end_el</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="includes/class-wp-internal-pointers.php.html#31"><abbr title="WP_Internal_Pointers::enqueue_scripts">enqueue_scripts</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="includes/class-wp-internal-pointers.php.html#108"><abbr title="WP_Internal_Pointers::print_js">print_js</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="includes/class-wp-internal-pointers.php.html#163"><abbr title="WP_Internal_Pointers::dismiss_pointers_for_new_users">dismiss_pointers_for_new_users</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="includes/class-wp-screen.php.html#217"><abbr title="WP_Screen::get">get</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="includes/class-wp-screen.php.html#380"><abbr title="WP_Screen::set_current_screen">set_current_screen</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="includes/class-wp-screen.php.html#413"><abbr title="WP_Screen::in_admin">in_admin</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="includes/class-wp-screen.php.html#442"><abbr title="WP_Screen::set_parentage">set_parentage</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="includes/class-wp-screen.php.html#612"><abbr title="WP_Screen::remove_help_tabs">remove_help_tabs</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="includes/class-wp-screen.php.html#457"><abbr title="WP_Screen::add_option">add_option</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="includes/class-wp-screen.php.html#468"><abbr title="WP_Screen::remove_option">remove_option</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="includes/class-wp-screen.php.html#477"><abbr title="WP_Screen::remove_options">remove_options</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="includes/class-wp-screen.php.html#488"><abbr title="WP_Screen::get_options">get_options</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="includes/class-wp-screen.php.html#502"><abbr title="WP_Screen::get_option">get_option</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="includes/class-wp-screen.php.html#521"><abbr title="WP_Screen::get_help_tabs">get_help_tabs</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="includes/class-wp-screen.php.html#553"><abbr title="WP_Screen::get_help_tab">get_help_tab</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="includes/class-wp-screen.php.html#576"><abbr title="WP_Screen::add_help_tab">add_help_tab</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="includes/class-wp-screen.php.html#603"><abbr title="WP_Screen::remove_help_tab">remove_help_tab</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="includes/class-wp-site-icon.php.html#231"><abbr title="WP_Site_Icon::get_post_metadata">get_post_metadata</abbr></a></td><td class="text-right">0%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="includes/class-wp-screen.php.html#217"><abbr title="WP_Screen::get">get</abbr></a></td><td class="text-right">3080</td></tr>
+       <tr><td><a href="includes/class-wp-screen.php.html#729"><abbr title="WP_Screen::render_screen_meta">render_screen_meta</abbr></a></td><td class="text-right">462</td></tr>
+       <tr><td><a href="includes/class-wp-screen.php.html#1132"><abbr title="WP_Screen::render_per_page_options">render_per_page_options</abbr></a></td><td class="text-right">156</td></tr>
+       <tr><td><a href="includes/class-wp-screen.php.html#1022"><abbr title="WP_Screen::render_meta_boxes_preferences">render_meta_boxes_preferences</abbr></a></td><td class="text-right">90</td></tr>
+       <tr><td><a href="includes/class-walker-category-checklist.php.html#68"><abbr title="Walker_Category_Checklist::start_el">start_el</abbr></a></td><td class="text-right">72</td></tr>
+       <tr><td><a href="includes/class-wp-screen.php.html#906"><abbr title="WP_Screen::show_screen_options">show_screen_options</abbr></a></td><td class="text-right">72</td></tr>
+       <tr><td><a href="includes/class-wp-screen.php.html#1058"><abbr title="WP_Screen::render_list_table_columns_preferences">render_list_table_columns_preferences</abbr></a></td><td class="text-right">56</td></tr>
+       <tr><td><a href="includes/class-wp-internal-pointers.php.html#31"><abbr title="WP_Internal_Pointers::enqueue_scripts">enqueue_scripts</abbr></a></td><td class="text-right">56</td></tr>
+       <tr><td><a href="includes/class-wp-internal-pointers.php.html#108"><abbr title="WP_Internal_Pointers::print_js">print_js</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="includes/class-wp-site-icon.php.html#147"><abbr title="WP_Site_Icon::additional_sizes">additional_sizes</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="includes/class-wp-screen.php.html#521"><abbr title="WP_Screen::get_help_tabs">get_help_tabs</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="includes/class-wp-screen.php.html#969"><abbr title="WP_Screen::render_screen_options">render_screen_options</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="includes/class-wp-screen.php.html#502"><abbr title="WP_Screen::get_option">get_option</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="includes/class-wp-site-icon.php.html#231"><abbr title="WP_Site_Icon::get_post_metadata">get_post_metadata</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="includes/class-wp-screen.php.html#576"><abbr title="WP_Screen::add_help_tab">add_help_tab</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="includes/class-wp-screen.php.html#1103"><abbr title="WP_Screen::render_screen_layout">render_screen_layout</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="includes/class-wp-screen.php.html#1196"><abbr title="WP_Screen::render_view_mode">render_view_mode</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="includes/class-wp-site-icon.php.html#210"><abbr title="WP_Site_Icon::delete_attachment_data">delete_attachment_data</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="includes/class-wp-screen.php.html#677"><abbr title="WP_Screen::get_screen_reader_text">get_screen_reader_text</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="includes/class-wp-screen.php.html#553"><abbr title="WP_Screen::get_help_tab">get_help_tab</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="includes/class-wp-screen.php.html#1247"><abbr title="WP_Screen::render_screen_reader_content">render_screen_reader_content</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="includes/class-wp-site-icon.php.html#89"><abbr title="WP_Site_Icon::create_attachment_object">create_attachment_object</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="includes/class-wp-screen.php.html#413"><abbr title="WP_Screen::in_admin">in_admin</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="includes/class-wp-site-icon.php.html#192"><abbr title="WP_Site_Icon::intermediate_image_sizes">intermediate_image_sizes</abbr></a></td><td class="text-right">6</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <footer>
+    <hr/>
+    <p>
+     <small>Generated by <a href="http://github.com/sebastianbergmann/php-code-coverage" target="_top">PHP_CodeCoverage 2.2.4</a> using <a href="https://secure.php.net/" target="_top">PHP 7.0.6-1+donate.sury.org~trusty+1</a> and <a href="https://phpunit.de/">PHPUnit 4.8.26</a> at Wed May 25 12:24:27 UTC 2016.</small>
+    </p>
+   </footer>
+  </div>
+  <script src="../../../../../js/jquery.min.js" type="text/javascript"></script>
+  <script src="../../../../../js/bootstrap.min.js" type="text/javascript"></script>
+  <script src="../../../../../js/holder.min.js" type="text/javascript"></script>
+  <script src="../../../../../js/d3.min.js" type="text/javascript"></script>
+  <script src="../../../../../js/nv.d3.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+$(document).ready(function() {
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#classCoverageDistribution svg')
+      .datum(getCoverageDistributionData([4,0,0,0,0,0,0,0,0,0,0,1], "Class Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#methodCoverageDistribution svg')
+      .datum(getCoverageDistributionData([45,0,0,0,0,0,0,0,0,0,0,21], "Method Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getCoverageDistributionData(data, label) {
+    var labels = [
+      '0%',
+      '0-10%',
+      '10-20%',
+      '20-30%',
+      '30-40%',
+      '40-50%',
+      '50-60%',
+      '60-70%',
+      '70-80%',
+      '80-90%',
+      '90-100%',
+      '100%'
+    ];
+    var values = [];
+    $.each(labels, function(key) {
+      values.push({x: labels[key], y: data[key]});
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(key, y, e, graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Cyclomatic Complexity');
+
+    d3.select('#classComplexity svg')
+      .datum(getComplexityData([[0,11,"<a href=\"includes\/class-walker-category-checklist.php.html#19\">Walker_Category_Checklist<\/a>"],[0,23,"<a href=\"includes\/class-wp-internal-pointers.php.html#15\">WP_Internal_Pointers<\/a>"],[0,158,"<a href=\"includes\/class-wp-screen.php.html#15\">WP_Screen<\/a>"],[0,18,"<a href=\"includes\/class-wp-site-icon.php.html#15\">WP_Site_Icon<\/a>"],[100,23,"<a href=\"includes\/deprecated.php.html#326\">WP_User_Search<\/a>"]], 'Class Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(key, y, e, graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Method Complexity');
+
+    d3.select('#methodComplexity svg')
+      .datum(getComplexityData([[0,1,"<a href=\"includes\/class-walker-category-checklist.php.html#34\">Walker_Category_Checklist::start_lvl<\/a>"],[0,1,"<a href=\"includes\/class-walker-category-checklist.php.html#50\">Walker_Category_Checklist::end_lvl<\/a>"],[0,8,"<a href=\"includes\/class-walker-category-checklist.php.html#68\">Walker_Category_Checklist::start_el<\/a>"],[0,1,"<a href=\"includes\/class-walker-category-checklist.php.html#122\">Walker_Category_Checklist::end_el<\/a>"],[0,7,"<a href=\"includes\/class-wp-internal-pointers.php.html#31\">WP_Internal_Pointers::enqueue_scripts<\/a>"],[0,5,"<a href=\"includes\/class-wp-internal-pointers.php.html#108\">WP_Internal_Pointers::print_js<\/a>"],[100,1,"<a href=\"includes\/class-wp-internal-pointers.php.html#143\">WP_Internal_Pointers::pointer_wp330_toolbar<\/a>"],[100,1,"<a href=\"includes\/class-wp-internal-pointers.php.html#144\">WP_Internal_Pointers::pointer_wp330_media_uploader<\/a>"],[100,1,"<a href=\"includes\/class-wp-internal-pointers.php.html#145\">WP_Internal_Pointers::pointer_wp330_saving_widgets<\/a>"],[100,1,"<a href=\"includes\/class-wp-internal-pointers.php.html#146\">WP_Internal_Pointers::pointer_wp340_customize_current_theme_link<\/a>"],[100,1,"<a href=\"includes\/class-wp-internal-pointers.php.html#147\">WP_Internal_Pointers::pointer_wp340_choose_image_from_library<\/a>"],[100,1,"<a href=\"includes\/class-wp-internal-pointers.php.html#148\">WP_Internal_Pointers::pointer_wp350_media<\/a>"],[100,1,"<a href=\"includes\/class-wp-internal-pointers.php.html#149\">WP_Internal_Pointers::pointer_wp360_revisions<\/a>"],[100,1,"<a href=\"includes\/class-wp-internal-pointers.php.html#150\">WP_Internal_Pointers::pointer_wp360_locks<\/a>"],[100,1,"<a href=\"includes\/class-wp-internal-pointers.php.html#151\">WP_Internal_Pointers::pointer_wp390_widgets<\/a>"],[100,1,"<a href=\"includes\/class-wp-internal-pointers.php.html#152\">WP_Internal_Pointers::pointer_wp410_dfw<\/a>"],[0,1,"<a href=\"includes\/class-wp-internal-pointers.php.html#163\">WP_Internal_Pointers::dismiss_pointers_for_new_users<\/a>"],[0,55,"<a href=\"includes\/class-wp-screen.php.html#217\">WP_Screen::get<\/a>"],[0,1,"<a href=\"includes\/class-wp-screen.php.html#380\">WP_Screen::set_current_screen<\/a>"],[100,1,"<a href=\"includes\/class-wp-screen.php.html#402\">WP_Screen::__construct<\/a>"],[0,2,"<a href=\"includes\/class-wp-screen.php.html#413\">WP_Screen::in_admin<\/a>"],[0,1,"<a href=\"includes\/class-wp-screen.php.html#430\">WP_Screen::add_old_compat_help<\/a>"],[0,1,"<a href=\"includes\/class-wp-screen.php.html#442\">WP_Screen::set_parentage<\/a>"],[0,1,"<a href=\"includes\/class-wp-screen.php.html#457\">WP_Screen::add_option<\/a>"],[0,1,"<a href=\"includes\/class-wp-screen.php.html#468\">WP_Screen::remove_option<\/a>"],[0,1,"<a href=\"includes\/class-wp-screen.php.html#477\">WP_Screen::remove_options<\/a>"],[0,1,"<a href=\"includes\/class-wp-screen.php.html#488\">WP_Screen::get_options<\/a>"],[0,4,"<a href=\"includes\/class-wp-screen.php.html#502\">WP_Screen::get_option<\/a>"],[0,5,"<a href=\"includes\/class-wp-screen.php.html#521\">WP_Screen::get_help_tabs<\/a>"],[0,2,"<a href=\"includes\/class-wp-screen.php.html#553\">WP_Screen::get_help_tab<\/a>"],[0,3,"<a href=\"includes\/class-wp-screen.php.html#576\">WP_Screen::add_help_tab<\/a>"],[0,1,"<a href=\"includes\/class-wp-screen.php.html#603\">WP_Screen::remove_help_tab<\/a>"],[0,1,"<a href=\"includes\/class-wp-screen.php.html#612\">WP_Screen::remove_help_tabs<\/a>"],[0,1,"<a href=\"includes\/class-wp-screen.php.html#623\">WP_Screen::get_help_sidebar<\/a>"],[0,1,"<a href=\"includes\/class-wp-screen.php.html#635\">WP_Screen::set_help_sidebar<\/a>"],[0,1,"<a href=\"includes\/class-wp-screen.php.html#652\">WP_Screen::get_columns<\/a>"],[0,1,"<a href=\"includes\/class-wp-screen.php.html#665\">WP_Screen::get_screen_reader_content<\/a>"],[0,2,"<a href=\"includes\/class-wp-screen.php.html#677\">WP_Screen::get_screen_reader_text<\/a>"],[0,1,"<a href=\"includes\/class-wp-screen.php.html#700\">WP_Screen::set_screen_reader_content<\/a>"],[0,1,"<a href=\"includes\/class-wp-screen.php.html#716\">WP_Screen::remove_screen_reader_content<\/a>"],[0,21,"<a href=\"includes\/class-wp-screen.php.html#729\">WP_Screen::render_screen_meta<\/a>"],[0,8,"<a href=\"includes\/class-wp-screen.php.html#906\">WP_Screen::show_screen_options<\/a>"],[0,4,"<a href=\"includes\/class-wp-screen.php.html#969\">WP_Screen::render_screen_options<\/a>"],[0,9,"<a href=\"includes\/class-wp-screen.php.html#1022\">WP_Screen::render_meta_boxes_preferences<\/a>"],[0,7,"<a href=\"includes\/class-wp-screen.php.html#1058\">WP_Screen::render_list_table_columns_preferences<\/a>"],[0,3,"<a href=\"includes\/class-wp-screen.php.html#1103\">WP_Screen::render_screen_layout<\/a>"],[0,12,"<a href=\"includes\/class-wp-screen.php.html#1132\">WP_Screen::render_per_page_options<\/a>"],[0,3,"<a href=\"includes\/class-wp-screen.php.html#1196\">WP_Screen::render_view_mode<\/a>"],[0,2,"<a href=\"includes\/class-wp-screen.php.html#1247\">WP_Screen::render_screen_reader_content<\/a>"],[0,1,"<a href=\"includes\/class-wp-site-icon.php.html#75\">WP_Site_Icon::__construct<\/a>"],[0,2,"<a href=\"includes\/class-wp-site-icon.php.html#89\">WP_Site_Icon::create_attachment_object<\/a>"],[0,1,"<a href=\"includes\/class-wp-site-icon.php.html#119\">WP_Site_Icon::insert_attachment<\/a>"],[0,5,"<a href=\"includes\/class-wp-site-icon.php.html#147\">WP_Site_Icon::additional_sizes<\/a>"],[0,2,"<a href=\"includes\/class-wp-site-icon.php.html#192\">WP_Site_Icon::intermediate_image_sizes<\/a>"],[0,3,"<a href=\"includes\/class-wp-site-icon.php.html#210\">WP_Site_Icon::delete_attachment_data<\/a>"],[0,4,"<a href=\"includes\/class-wp-site-icon.php.html#231\">WP_Site_Icon::get_post_metadata<\/a>"],[100,3,"<a href=\"includes\/deprecated.php.html#482\">WP_User_Search::__construct<\/a>"],[100,1,"<a href=\"includes\/deprecated.php.html#505\">WP_User_Search::WP_User_Search<\/a>"],[100,5,"<a href=\"includes\/deprecated.php.html#515\">WP_User_Search::prepare_query<\/a>"],[100,2,"<a href=\"includes\/deprecated.php.html#553\">WP_User_Search::query<\/a>"],[100,1,"<a href=\"includes\/deprecated.php.html#570\">WP_User_Search::prepare_vars_for_template_usage<\/a>"],[100,5,"<a href=\"includes\/deprecated.php.html#578\">WP_User_Search::do_paging<\/a>"],[100,1,"<a href=\"includes\/deprecated.php.html#612\">WP_User_Search::get_results<\/a>"],[100,1,"<a href=\"includes\/deprecated.php.html#624\">WP_User_Search::page_links<\/a>"],[100,2,"<a href=\"includes\/deprecated.php.html#638\">WP_User_Search::results_are_paged<\/a>"],[100,2,"<a href=\"includes\/deprecated.php.html#652\">WP_User_Search::is_search<\/a>"]], 'Method Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getComplexityData(data, label) {
+    var values = [];
+    $.each(data, function(key) {
+      var value = Math.round(data[key][0]*100) / 100;
+      values.push({
+        x: value,
+        y: data[key][1],
+        class: data[key][2],
+        size: 0.05,
+        shape: 'diamond'
+      });
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+});
+  </script>
+ </body>
+</html>
