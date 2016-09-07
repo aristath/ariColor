@@ -249,7 +249,7 @@ class Test_ariColor extends WP_UnitTestCase {
 
 		foreach ( $colors as $color ) {
 			$hex_obj = ariColor::newColor( $color );
-			$this->assertEquals( $hex_obj->toCSS( 'hex' ), $color );
+			$this->assertEquals( strtolower( $hex_obj->toCSS( 'hex' ) ), strtolower( $color ) );
 
 			$rgba = $hex_obj->toCSS( 'rgba' );
 
