@@ -183,31 +183,58 @@ class Test_ariColor extends WP_UnitTestCase {
 					switch ( $test ) {
 
 						case 'hex':
-							$this->assertEquals( $expected_result, $color_obj->toCSS( 'hex' ) );
+							$this->assertEquals(
+								strtolower( $expected_result ),
+								strtolower( $color_obj->toCSS( 'hex' ) )
+							);
 							break;
 						case 'rgb':
-							$this->assertEquals( $expected_result, $color_obj->toCSS( 'rgb' ) );
+							$this->assertEquals(
+								strtolower( $expected_result ),
+								strtolower( $color_obj->toCSS( 'rgb' ) )
+							);
 							break;
 						case 'rgba':
-							$this->assertEquals( $expected_result, $color_obj->toCSS( 'rgba' ) );
+							$this->assertEquals(
+								strtolower( $expected_result ),
+								strtolower( $color_obj->toCSS( 'rgba' ) )
+							);
 							break;
 						case 'hsl':
-							$this->assertEquals( $expected_result, $color_obj->toCSS( 'hsl' ) );
+							$this->assertEquals(
+								strtolower( $expected_result ),
+								strtolower( $color_obj->toCSS( 'hsl' ) )
+							);
 							break;
 						case 'hsla':
-							$this->assertEquals( $expected_result, $color_obj->toCSS( 'hsla' ) );
+							$this->assertEquals(
+								strtolower( $expected_result ),
+								strtolower( $color_obj->toCSS( 'hsla' ) )
+							);
 							break;
 						case 'hue':
-							$this->assertEquals( $expected_result, $color_obj->hue );
+							$this->assertEquals(
+								strtolower( $expected_result ),
+								strtolower( $color_obj->hue )
+							);
 							break;
 						case 'saturation':
-							$this->assertEquals( $expected_result, $color_obj->saturation );
+							$this->assertEquals(
+								strtolower( $expected_result ),
+								strtolower( $color_obj->saturation )
+							);
 							break;
 						case 'lightness':
-							$this->assertEquals( $expected_result, $color_obj->lightness );
+							$this->assertEquals(
+								strtolower( $expected_result ),
+								strtolower( $color_obj->lightness )
+							);
 							break;
 						case 'luminance':
-							$this->assertEquals( $expected_result, $color_obj->luminance );
+							$this->assertEquals(
+								strtolower( $expected_result ),
+								strtolower( $color_obj->luminance )
+							);
 							break;
 
 					}
@@ -228,7 +255,7 @@ class Test_ariColor extends WP_UnitTestCase {
 
 			$rgba_obj = ariColor::newColor( $rgba );
 
-			$this->assertEquals( $color, $rgba_obj->toCSS( 'hex' ) );
+			$this->assertEquals( strtolower( $color ), strtolower( $rgba_obj->toCSS( 'hex' ) ) );
 		}
 
 	}
@@ -363,7 +390,7 @@ class Test_ariColor extends WP_UnitTestCase {
 			'FF5722',
 			'795548',
 			'9E9E9E',
-			'607D8B'
+			'607D8B',
 		);
 		foreach ( $colors as $color ) {
 			$mdc[] = '#' . $color;
