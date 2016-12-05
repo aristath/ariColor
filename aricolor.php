@@ -5,7 +5,7 @@
  * Description:   A PHP library for color manipulation in WordPress themes and plugins
  * Author:        Aristeides Stathopoulos
  * Author URI:    http://aristeides.com
- * Version:       1.1
+ * Version:       1.1.0
  * Text Domain:   aricolor
  *
  * GitHub Plugin URI: aristath/ariColor
@@ -35,6 +35,7 @@ if ( ! class_exists( 'ariColor' ) ) {
 		 *
 		 * @static
 		 * @access public
+		 * @since 1.0.0
 		 * @var array
 		 */
 		public static $instances = array();
@@ -43,6 +44,7 @@ if ( ! class_exists( 'ariColor' ) ) {
 		 * The color initially set.
 		 *
 		 * @access public
+		 * @since 1.0.0
 		 * @var mixed
 		 */
 		public $color;
@@ -51,6 +53,7 @@ if ( ! class_exists( 'ariColor' ) ) {
 		 * The mode we're using for this color.
 		 *
 		 * @access public
+		 * @since 1.0.0
 		 * @var string
 		 */
 		public $mode = 'hex';
@@ -60,6 +63,7 @@ if ( ! class_exists( 'ariColor' ) ) {
 		 * and their corresponding HEX codes.
 		 *
 		 * @access public
+		 * @since 1.0.0
 		 * @var array
 		 */
 		public $word_colors = array();
@@ -68,6 +72,7 @@ if ( ! class_exists( 'ariColor' ) ) {
 		 * The hex code of the color.
 		 *
 		 * @access public
+		 * @since 1.0.0
 		 * @var string
 		 */
 		public $hex;
@@ -76,6 +81,7 @@ if ( ! class_exists( 'ariColor' ) ) {
 		 * Red value.
 		 *
 		 * @access public
+		 * @since 1.0.0
 		 * @var int
 		 */
 		public $red   = 0;
@@ -84,6 +90,7 @@ if ( ! class_exists( 'ariColor' ) ) {
 		 * Green value.
 		 *
 		 * @access public
+		 * @since 1.0.0
 		 * @var int
 		 */
 		public $green = 0;
@@ -92,6 +99,7 @@ if ( ! class_exists( 'ariColor' ) ) {
 		 * Blue value.
 		 *
 		 * @access public
+		 * @since 1.0.0
 		 * @var int
 		 */
 		public $blue  = 0;
@@ -100,6 +108,7 @@ if ( ! class_exists( 'ariColor' ) ) {
 		 * Alpha value (min:0, max: 1)
 		 *
 		 * @access public
+		 * @since 1.0.0
 		 * @var float
 		 */
 		public $alpha = 1;
@@ -109,6 +118,7 @@ if ( ! class_exists( 'ariColor' ) ) {
 		 * Hue value.
 		 *
 		 * @access public
+		 * @since 1.0.0
 		 * @var float
 		 */
 		public $hue;
@@ -117,6 +127,7 @@ if ( ! class_exists( 'ariColor' ) ) {
 		 * Saturation value.
 		 *
 		 * @access public
+		 * @since 1.0.0
 		 * @var float
 		 */
 		public $saturation;
@@ -125,6 +136,7 @@ if ( ! class_exists( 'ariColor' ) ) {
 		 * Lightness value.
 		 *
 		 * @access public
+		 * @since 1.0.0
 		 * @var float
 		 */
 		public $lightness;
@@ -133,6 +145,7 @@ if ( ! class_exists( 'ariColor' ) ) {
 		 * Chroma value.
 		 *
 		 * @access public
+		 * @since 1.0.0
 		 * @var float
 		 */
 		public $chroma;
@@ -141,6 +154,7 @@ if ( ! class_exists( 'ariColor' ) ) {
 		 * An array containing brightnesses.
 		 *
 		 * @access public
+		 * @since 1.0.0
 		 * @var array
 		 */
 		public $brightness = array();
@@ -149,6 +163,7 @@ if ( ! class_exists( 'ariColor' ) ) {
 		 * Luminance value.
 		 *
 		 * @access public
+		 * @since 1.0.0
 		 * @var float
 		 */
 		public $luminance;
@@ -156,10 +171,12 @@ if ( ! class_exists( 'ariColor' ) ) {
 		/**
 		 * The class constructor.
 		 *
+		 * @access protected
+		 * @since 1.0.0
 		 * @param string|array $color The color.
 		 * @param string       $mode  The color mode. Leave empty to auto-detect.
 		 */
-		private function __construct( $color = '', $mode = 'auto' ) {
+		protected function __construct( $color = '', $mode = 'auto' ) {
 			$this->color = $color;
 			if ( ! method_exists( $this, 'from_' . $mode ) ) {
 				$mode = $this->get_mode( $color );
@@ -179,6 +196,9 @@ if ( ! class_exists( 'ariColor' ) ) {
 		 * because there's no need to create a completely new instance each time we call this class.
 		 * Instead using instances helps us improve performance & footprint.
 		 *
+		 * @static
+		 * @access public
+		 * @since 1.0.0
 		 * @param string|array $color The color.
 		 * @param string       $mode  Mode to be used.
 		 * @return Avada_Color (object)
@@ -196,6 +216,8 @@ if ( ! class_exists( 'ariColor' ) ) {
 		/**
 		 * Alias of the newColor method.
 		 *
+		 * @static
+		 * @access public
 		 * @since 1.1
 		 * @param string|array $color The color.
 		 * @param string       $mode  Mode to be used.
@@ -208,6 +230,8 @@ if ( ! class_exists( 'ariColor' ) ) {
 		/**
 		 * Allows us to get a new instance by modifying a property of the existing one.
 		 *
+		 * @access public
+		 * @since 1.0.0
 		 * @param string           $property   Can be one of the following:
 		 *                             red,
 		 *                             green,
@@ -267,6 +291,8 @@ if ( ! class_exists( 'ariColor' ) ) {
 		/**
 		 * Allias for the getNew method.
 		 *
+		 * @access public
+		 * @since 1.1.0
 		 * @param string           $property   Can be one of the following:
 		 *                             red,
 		 *                             green,
@@ -286,6 +312,8 @@ if ( ! class_exists( 'ariColor' ) ) {
 		/**
 		 * Figure out what mode we're using.
 		 *
+		 * @access public
+		 * @since 1.0.0
 		 * @param string|array $color The color we're querying.
 		 * @return string
 		 */
@@ -364,9 +392,11 @@ if ( ! class_exists( 'ariColor' ) ) {
 		/**
 		 * Starts with a HEX color and calculates all other properties.
 		 *
+		 * @access protected
+		 * @since 1.0.0
 		 * @return void
 		 */
-		private function from_hex() {
+		protected function from_hex() {
 
 			if ( ! function_exists( 'sanitize_hex_color' ) ) {
 				require_once ABSPATH . WPINC . '/class-wp-customize-manager.php';
@@ -399,9 +429,11 @@ if ( ! class_exists( 'ariColor' ) ) {
 		/**
 		 * Starts with an RGB color and calculates all other properties.
 		 *
+		 * @access protected
+		 * @since 1.0.0
 		 * @return void
 		 */
-		private function from_rgb() {
+		protected function from_rgb() {
 			$value = explode( ',', str_replace( array( ' ', 'rgb', '(', ')' ), '', $this->color ) );
 			// Set red, green, blue.
 			$this->red   = ( isset( $value[0] ) ) ? intval( $value[0] ) : 255;
@@ -419,9 +451,11 @@ if ( ! class_exists( 'ariColor' ) ) {
 		/**
 		 * Starts with an RGBA color and calculates all other properties.
 		 *
+		 * @access protected
+		 * @since 1.0.0
 		 * @return void
 		 */
-		private function from_rgba() {
+		protected function from_rgba() {
 			// Set r, g, b, a properties.
 			$value = explode( ',', str_replace( array( ' ', 'rgba', '(', ')' ), '', $this->color ) );
 			$this->red   = ( isset( $value[0] ) ) ? intval( $value[0] ) : 255;
@@ -445,9 +479,11 @@ if ( ! class_exists( 'ariColor' ) ) {
 		/**
 		 * Starts with an HSL color and calculates all other properties.
 		 *
+		 * @access protected
+		 * @since 1.0.0
 		 * @return void
 		 */
-		private function from_hsl() {
+		protected function from_hsl() {
 			$value = explode( ',', str_replace( array( ' ', 'hsl', '(', ')', '%' ), '', $this->color ) );
 			$this->hue        = $value[0];
 			$this->saturation = $value[1];
@@ -458,9 +494,11 @@ if ( ! class_exists( 'ariColor' ) ) {
 		/**
 		 * Starts with an HSLA color and calculates all other properties.
 		 *
+		 * @access protected
+		 * @since 1.0.0
 		 * @return void
 		 */
-		private function from_hsla() {
+		protected function from_hsla() {
 			$value = explode( ',', str_replace( array( ' ', 'hsla', '(', ')', '%' ), '', $this->color ) );
 			$this->hue        = $value[0];
 			$this->saturation = $value[1];
@@ -472,13 +510,14 @@ if ( ! class_exists( 'ariColor' ) ) {
 		/**
 		 * Generates the HEX value of a color given values for $red, $green, $blue.
 		 *
+		 * @access protected
+		 * @since 1.0.0
 		 * @param int|string $red   The red value of this color.
 		 * @param int|string $green The green value of this color.
 		 * @param int|string $blue  The blue value of this color.
-		 *
 		 * @return string
 		 */
-		private function rgb_to_hex( $red, $green, $blue ) {
+		protected function rgb_to_hex( $red, $green, $blue ) {
 			// Get hex values properly formatted.
 			$hex_red   = $this->dexhex_double_digit( $red );
 			$hex_green = $this->dexhex_double_digit( $green );
@@ -489,10 +528,12 @@ if ( ! class_exists( 'ariColor' ) ) {
 		/**
 		 * Convert a decimal value to hex and make sure it's 2 characters.
 		 *
+		 * @access protected
+		 * @since 1.0.0
 		 * @param int|string $value The value to convert.
 		 * @return string
 		 */
-		private function dexhex_double_digit( $value ) {
+		protected function dexhex_double_digit( $value ) {
 			$value = dechex( $value );
 			if ( 1 === strlen( $value ) ) {
 				$value = '0' . $value;
@@ -503,9 +544,11 @@ if ( ! class_exists( 'ariColor' ) ) {
 		/**
 		 * Calculates the red, green, blue values of an HSL color.
 		 *
+		 * @access protected
+		 * @since 1.0.0
 		 * @see https://gist.github.com/brandonheyer/5254516
 		 */
-		private function from_hsl_array() {
+		protected function from_hsl_array() {
 			$h = $this->hue / 360;
 			$s = $this->saturation / 100;
 			$l = $this->lightness / 100;
@@ -567,6 +610,8 @@ if ( ! class_exists( 'ariColor' ) ) {
 		/**
 		 * Returns a CSS-formatted value for colors.
 		 *
+		 * @access public
+		 * @since 1.0.0
 		 * @param string $mode The mode we're using.
 		 * @return string
 		 */
@@ -593,9 +638,11 @@ if ( ! class_exists( 'ariColor' ) ) {
 			}
 			return $value;
 		}
+
 		/**
 		 * Alias for the toCSS method.
 		 *
+		 * @access public
 		 * @since 1.1
 		 * @param string $mode The mode we're using.
 		 * @return string
@@ -606,8 +653,11 @@ if ( ! class_exists( 'ariColor' ) ) {
 
 		/**
 		 * Sets the HSL values of a color based on the values of red, green, blue.
+		 *
+		 * @access public
+		 * @since 1.0.0
 		 */
-		private function set_hsl() {
+		protected function set_hsl() {
 			$red   = $this->red / 255;
 			$green = $this->green / 255;
 			$blue  = $this->blue / 255;
@@ -645,8 +695,11 @@ if ( ! class_exists( 'ariColor' ) ) {
 
 		/**
 		 * Sets the brightness of a color based on the values of red, green, blue.
+		 *
+		 * @access protected
+		 * @since 1.0.0
 		 */
-		private function set_brightness() {
+		protected function set_brightness() {
 			$this->brightness = array(
 				'red'   => round( $this->red * .299 ),
 				'green' => round( $this->green * .587 ),
@@ -657,8 +710,11 @@ if ( ! class_exists( 'ariColor' ) ) {
 
 		/**
 		 * Sets the luminance of a color (range:0-255) based on the values of red, green, blue.
+		 *
+		 * @access protected
+		 * @since 1.0.0
 		 */
-		private function set_luminance() {
+		protected function set_luminance() {
 			$lum = ( 0.2126 * $this->red ) + ( 0.7152 * $this->green ) + ( 0.0722 * $this->blue );
 			$this->luminance = round( $lum );
 		}
@@ -666,9 +722,11 @@ if ( ! class_exists( 'ariColor' ) ) {
 		/**
 		 * Gets an array of all the wordcolors.
 		 *
+		 * @access protected
+		 * @since 1.0.0
 		 * @return array
 		 */
-		private function get_word_colors() {
+		protected function get_word_colors() {
 			return array(
 				'aliceblue'            => 'F0F8FF',
 				'antiquewhite'         => 'FAEBD7',
@@ -825,7 +883,7 @@ if ( ! class_exists( 'ariColor' ) ) {
 		 * Handle non-existing public methods.
 		 *
 		 * @access public
-		 * @since Avada 5.0.0
+		 * @since 1.1.0
 		 * @param string $name      The method name.
 		 * @param mixed  $arguments The method arguments.
 		 * @return mixed
@@ -843,7 +901,7 @@ if ( ! class_exists( 'ariColor' ) ) {
 		 *
 		 * @static
 		 * @access public
-		 * @since Avada 5.0.0
+		 * @since 1.1.0
 		 * @param string $name      The method name.
 		 * @param mixed  $arguments The method arguments.
 		 * @return mixed
