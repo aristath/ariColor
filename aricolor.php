@@ -178,12 +178,17 @@ if ( ! class_exists( 'ariColor' ) ) {
 		 */
 		protected function __construct( $color = '', $mode = 'auto' ) {
 			$this->color = $color;
+
 			if ( ! method_exists( $this, 'from_' . $mode ) ) {
 				$mode = $this->get_mode( $color );
 			}
-			if ( null === $mode ) {
+
+			$this->mode = $mode;
+
+			if ( ! $mode ) {
 				return;
 			}
+
 			$this->mode = $mode;
 			$method = 'from_' . $mode;
 			// Call the from_{$color_mode} method.
@@ -338,6 +343,7 @@ if ( ! class_exists( 'ariColor' ) ) {
 					$this->color = 'rgba(' . intval( $color[0] ) . ',' . intval( $color[1] ) . ',' . intval( $color[2] ) . ',1)';
 					return 'rgba';
 				}
+
 				// Check for other keys in the array and get values from there.
 				$finders_keepers = array(
 					'r'       => 'red',
@@ -357,10 +363,12 @@ if ( ! class_exists( 'ariColor' ) ) {
 						$this->$keeper = $color[ $finder ];
 					}
 				}
-				// We failed, return null.
+
+				// We failed, return false.
 				if ( ! $found ) {
-					return null;
+					return false;
 				}
+
 				// We did not fail, so use rgba values recovered above.
 				$this->color = 'rgba(' . $this->red . ',' . $this->green . ',' . $this->blue . ',' . $this->alpha . ')';
 				return 'rgba';
@@ -376,6 +384,12 @@ if ( ! class_exists( 'ariColor' ) ) {
 			);
 			foreach ( $finders_keepers as $finder => $keeper ) {
 				if ( false !== strrpos( $color, $finder ) ) {
+
+					// Make sure hex colors have 6 digits and not more.
+					if ( '#' === $finder && 7 < strlen( $color ) ) {
+						$this->color = substr( $color, 0, 7 );
+					}
+
 					return $keeper;
 				}
 			}
@@ -399,7 +413,7 @@ if ( ! class_exists( 'ariColor' ) ) {
 		protected function from_hex() {
 
 			if ( ! function_exists( 'sanitize_hex_color' ) ) {
-				require_once ABSPATH . WPINC . '/class-wp-customize-manager.php';
+				require_once wp_normalize_path( ABSPATH . WPINC . '/class-wp-customize-manager.php' );
 			}
 			// Is this perhaps a word-color?
 			$word_colors = $this->get_word_colors();
@@ -414,6 +428,7 @@ if ( ! class_exists( 'ariColor' ) ) {
 				$hex = ltrim( $this->hex, '#' );
 				$hex = substr( $hex, 0, 1 ) . substr( $hex, 0, 1 ) . substr( $hex, 1, 1 ) . substr( $hex, 1, 1 ) . substr( $hex, 2, 1 ) . substr( $hex, 2, 1 );
 			}
+
 			// Set red, green, blue.
 			$this->red   = hexdec( substr( $hex, 0, 2 ) );
 			$this->green = hexdec( substr( $hex, 2, 2 ) );
