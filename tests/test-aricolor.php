@@ -367,6 +367,41 @@ class Test_ariColor extends WP_UnitTestCase {
 		}
 
 	}
+	
+	public function test_fallbacks() {
+		
+		// Test with 'array' (string).
+		$obj = ariColor::newColor( 'array' );
+		$this->assertEquals( $obj->to_css( 'hex' ), '#ffffff' );
+		$obj = ariColor::newColor( 'Array' );
+		$this->assertEquals( $obj->to_css( 'hex' ), '#ffffff' );
+
+		// Test with invalid values, and fallback colors.
+		$this->assertEquals( 
+			ariColor::newColor( array( 'color' => 'array', 'fallback' => '#333' ) )->to_css( 'hex' ), 
+			'#333' 
+		);
+		$this->assertEquals( 
+			ariColor::newColor( array( 'color' => 'Array', 'fallback' => '#333' ) )->to_css( 'hex' ), 
+			'#333' 
+		);
+		$this->assertEquals( 
+			strtolower( ariColor::newColor( array( 'color' => 'lalala', 'fallback' => '#3F51B5' ) )->to_css( 'hex' ) ), 
+			strtolower( '#3F51B5' ) 
+		);
+		$this->assertEquals( 
+			ariColor::newColor( array( 'color' => 'Array', 'fallback' => '#3F51B5' ) )->to_css( 'rgba' ), 
+			ariColor::newColor( '#3F51B5' )->to_css( 'rgba' )
+		);
+		$this->assertEquals( 
+			ariColor::newColor( array( 'color' => 'tralala', 'fallback' => 'rgba(0,3,120,4)' ) )->to_css( 'hex' ), 
+			ariColor::newColor( 'rgba(0,3,120,4)' )->to_css( 'hex' )
+		);
+		$this->assertEquals( 
+			ariColor::newColor( array( 'color' => 'tralala', 'fallback' => 'rgba(0,3,120,.4)' ) )->to_css( 'hex' ), 
+			ariColor::newColor( 'rgba(0,3,120,.4)' )->to_css( 'hex' )
+		);
+	}
 
 	public function get_material_design_main_colors() {
 
