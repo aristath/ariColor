@@ -401,6 +401,13 @@ if ( ! class_exists( 'ariColor' ) ) {
 				$this->color = 'rgba(' . $this->red . ',' . $this->green . ',' . $this->blue . ',' . $this->alpha . ')';
 				return 'rgba';
 			}
+			
+			// If a string and 3 or 6 characters long, add # since it's a hex.
+			if ( 3 === strlen( $this->color ) || 6 === strlen( $this->color ) && false === strpos( $this->color, '#' ) ) {
+				$this->color = '#' . $this->color;
+				$color = $this->color;
+			}
+
 			// If we got this far, it's not an array.
 			// Check for key identifiers in the value.
 			$finders_keepers = array(
