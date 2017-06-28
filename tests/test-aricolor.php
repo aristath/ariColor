@@ -368,6 +368,15 @@ class Test_ariColor extends WP_UnitTestCase {
 
 	}
 	
+	public function test_transparent() {
+		$transparent_from_string = ariColor::newColor( 'transparent' );
+		$transparent_from_rgba   = ariColor::newColor( 'rgba(255,255,255,0)' );
+		
+		$this->assertEquals( $transparent_from_string, $transparent_from_rgba );
+		$this->assertEquals( $transparent_from_string, ariColor::newColor( '  trAnsPARent   ' ) );
+		$this->assertEquals( $transparent_from_string->alpha, 0 );
+	}
+	
 	public function test_fallbacks() {
 		
 		// Test with 'array' (string).

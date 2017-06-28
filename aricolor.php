@@ -228,7 +228,7 @@ if ( ! class_exists( 'ariColor' ) ) {
 		 * @since 1.0.0
 		 * @param string|array $color The color.
 		 * @param string       $mode  Mode to be used.
-		 * @return Avada_Color (object)
+		 * @return ariColor (object)
 		 */
 		public static function newColor( $color, $mode = 'auto' ) {
 
@@ -249,7 +249,7 @@ if ( ! class_exists( 'ariColor' ) ) {
 		 * @since 1.1
 		 * @param string|array $color The color.
 		 * @param string       $mode  Mode to be used.
-		 * @return Avada_Color (object)
+		 * @return ariColor (object)
 		 */
 		public static function new_color( $color, $mode = 'auto' ) {
 			return self::newColor( $color, $mode );
@@ -270,7 +270,7 @@ if ( ! class_exists( 'ariColor' ) ) {
 		 *                             lightness,
 		 *                             brightness.
 		 * @param int|float|string $value      The new value.
-		 * @return Avada_Color|null
+		 * @return ariColor|null
 		 */
 		public function getNew( $property = '', $value = '' ) {
 
@@ -331,7 +331,7 @@ if ( ! class_exists( 'ariColor' ) ) {
 		 *                             lightness,
 		 *                             brightness.
 		 * @param int|float|string $value      The new value.
-		 * @return Avada_Color|null
+		 * @return ariColor|null
 		 */
 		public function get_new( $property = '', $value = '' ) {
 			return $this->getNew( $property, $value );
@@ -401,7 +401,14 @@ if ( ! class_exists( 'ariColor' ) ) {
 				$this->color = 'rgba(' . $this->red . ',' . $this->green . ',' . $this->blue . ',' . $this->alpha . ')';
 				return 'rgba';
 			}
-			
+
+			$color = trim( strtolower( $color ) );
+
+			if ( 'transparent' === $color ) {
+				$color = 'rgba(255,255,255,0)';
+				$this->color = $color;
+			}
+
 			// If a string and 3 or 6 characters long, add # since it's a hex.
 			if ( 3 === strlen( $this->color ) || 6 === strlen( $this->color ) && false === strpos( $this->color, '#' ) ) {
 				$this->color = '#' . $this->color;
@@ -936,7 +943,7 @@ if ( ! class_exists( 'ariColor' ) ) {
 			);
 
 		}
-		
+
 		/**
 		 * Use fallback object.
 		 *
