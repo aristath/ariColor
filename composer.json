@@ -1,5 +1,5 @@
 {
-  "name": "aristath/ariColor",
+  "name": "aristath/ari-color",
   "type": "wordpress-plugin",
   "description": "A PHP library for color manipulation in themes and plugins",
   "homepage": "http://aristath.github.io/ariColor",
