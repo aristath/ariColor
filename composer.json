@@ -1,6 +1,6 @@
 {
   "name": "aristath/ari-color",
-  "type": "wordpress-plugin",
+  "type": "library",
   "description": "A PHP library for color manipulation in themes and plugins",
   "homepage": "http://aristath.github.io/ariColor",
   "license": "GPLv2 or later",
