@@ -7,7 +7,7 @@ A PHP library for color manipulation in themes and plugins
 
 It does not provide you with methods like `lighten()`, `darken()` etc. Instead, what it does is give you the ability to create these yourself with extreme ease by giving you all the properties of a color at hand, and allowing you to manipulate them however you see fit.
 
-## Installation
+#### Installation
 
 ``` composer require aristath/ari-color ```
 
