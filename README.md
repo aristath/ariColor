@@ -9,7 +9,9 @@ It does not provide you with methods like `lighten()`, `darken()` etc. Instead, 
 
 #### Installation
 
-``` composer require aristath/ari-color ```
+```cl
+composer require aristath/ari-color
+```
 
 Example:
 
