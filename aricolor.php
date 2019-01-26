@@ -19,11 +19,6 @@
  * @since       1.0
  */
 
-// Exit if accessed directly.
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
-}
-
 if ( ! class_exists( 'ariColor' ) ) {
 	/**
 	 * The color calculations class.
@@ -448,6 +443,24 @@ if ( ! class_exists( 'ariColor' ) ) {
 		}
 
 		/**
+		 * Sanitize a hex color.
+		 *
+		 * @param string $color The color we want to sanitize.
+		 * @return string
+		 */
+		protected function sanitize_hex_color( $color ) {
+			$color = '#' . ltrim( $color, '#' );
+			if ( '#' === $color ) {
+				return '';
+			}
+			// 3 or 6 hex digits, or the empty string.
+			if ( preg_match('|^#([A-Fa-f0-9]{3}){1,2}$|', $color ) ) {
+				return $color;
+			}
+			return '';
+		}
+		
+		/**
 		 * Starts with a HEX color and calculates all other properties.
 		 *
 		 * @access protected
@@ -456,16 +469,13 @@ if ( ! class_exists( 'ariColor' ) ) {
 		 */
 		protected function from_hex() {
 
-			if ( ! function_exists( 'sanitize_hex_color' ) ) {
-				require_once wp_normalize_path( ABSPATH . WPINC . '/class-wp-customize-manager.php' );
-			}
 			// Is this perhaps a word-color?
 			$word_colors = $this->get_word_colors();
 			if ( array_key_exists( $this->color, $word_colors ) ) {
 				$this->color = '#' . $word_colors[ $this->color ];
 			}
 			// Sanitize color.
-			$this->hex = sanitize_hex_color( maybe_hash_hex_color( $this->color ) );
+			$this->hex = $this->sanitize_hex_color( $this->color );
 			$hex = ltrim( $this->hex, '#' );
 
 			// Fallback if needed.
