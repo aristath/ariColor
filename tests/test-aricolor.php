@@ -1,6 +1,5 @@
 <?php
-
-class Test_ariColor extends WP_UnitTestCase {
+class Test_ariColor extends PHPUnit\Framework\TestCase {
 
 	public function test_colors() {
 
