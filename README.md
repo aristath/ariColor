@@ -280,3 +280,11 @@ function custom_color_sanitize( $color = '' ) {
 ```
 
 You can even use a function like this one as a `sanitize_callback` in a customizer control :)
+
+
+### Testing
+
+```cl
+composer update --dev
+./vendor/bin/phpunit
+```
