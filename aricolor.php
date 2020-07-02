@@ -404,10 +404,10 @@ if ( ! class_exists( 'ariColor' ) ) {
 				$this->color = $color;
 			}
 
-			// If a string and 3 or 6 characters long, add # since it's a hex.
-			if ( 3 === strlen( $this->color ) || 6 === strlen( $this->color ) && false === strpos( $this->color, '#' ) ) {
-				$this->color = '#' . $this->color;
-				$color = $this->color;
+			// If the color contains 3 or 6 hex numbers, prepend #.
+			if ( preg_match( '|^([0-9a-f]{3}){1,2}$|', $color ) ) {
+				$color = '#' . $color;
+				$this->color = $color;
 			}
 
 			// If we got this far, it's not an array.

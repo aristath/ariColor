@@ -242,6 +242,23 @@ class Test_ariColor extends PHPUnit\Framework\TestCase {
 		}
 	}
 
+	public function test_word_colors() {
+
+		$colors = array(
+			'blue'             => '#0000FF',
+			'GREEN'            => '#008000',
+			'red'              => '#FF0000',
+			'Violet'           => '#EE82EE',
+			'not_a_word_color' => '#FFFFFF',
+		);
+
+		foreach ( $colors as $word => $hex ) {
+			$color_obj = ariColor::newColor( $word );
+			$this->assertEquals( strtolower( $color_obj->toCSS( 'hex' ) ), strtolower( $hex ) );
+		}
+
+	}
+
 	public function test_color_conversions() {
 
 		$colors = $this->get_material_design_main_colors();
