@@ -228,7 +228,7 @@ if ( ! class_exists( 'ariColor' ) ) {
 		public static function newColor( $color, $mode = 'auto' ) {
 
 			// Get an md5 for this color.
-			$color_md5 = ( is_array( $color ) ) ? md5( wp_json_encode( $color ) . $mode ) : md5( $color . $mode );
+			$color_md5 = ( is_array( $color ) ) ? md5( json_encode( $color ) . $mode ) : md5( $color . $mode );
 			// Set the instance if it does not already exist.
 			if ( ! isset( self::$instances[ $color_md5 ] ) ) {
 				self::$instances[ $color_md5 ] = new self( $color, $mode );
