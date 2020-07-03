@@ -14,7 +14,7 @@ env:
 
 defore_install:
   - pip install --user codecov
-  - composer require phpunit/phpunit:4.8.* satooshi/php-coveralls:dev-master
+  - composer require phpunit/phpunit:4.8.* satooshi/php-coveralls:~2.2
   - composer install --dev
 
 before_script:
