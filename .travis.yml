@@ -7,28 +7,27 @@ notifications:
   on_failure: change
 
 php:
+  - 5.6
   - 7.0
+  - 7.1
+  - 7.2
+  - 7.3
+  - 7.4
 
-env:
-  - WP_VERSION=latest WP_MULTISITE=0
-
-defore_install:
+before_install:
   - pip install --user codecov
-  - composer require phpunit/phpunit:4.8.* satooshi/php-coveralls:~2.2
   - composer install --dev
 
 before_script:
-  - bash tests/bin/install-wp-tests.sh wordpress_test root '' localhost $WP_VERSION
-  - curl -s http://getcomposer.org/installer | php
-  - php composer.phar install --dev --no-interaction
+  - travis_retry composer install --dev --no-interaction
 
 script:
   - mkdir -p build/logs
-  - phpunit --coverage-clover=coverage.clover
+  - ./vendor/bin/phpunit --coverage-clover=coverage.clover
   - ./vendor/bin/phpunit --coverage-clover ./tests/logs/clover.xml
 
 after_script:
-  - php vendor/bin/coveralls
+  - ./vendor/bin/php-coveralls
   - wget https://scrutinizer-ci.com/ocular.phar
   - php ocular.phar code-coverage:upload --format=php-clover coverage.clove
 
